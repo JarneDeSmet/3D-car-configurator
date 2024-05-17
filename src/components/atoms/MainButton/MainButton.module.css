@@ -1,0 +1,15 @@
+.button {
+    background: none;
+    border: solid 1px var(--foreground);
+    font-size: clamp(1.5rem, 1vw, 2rem);
+    font-weight: 200;
+    padding: 0.7rem 4rem;
+    transition-duration: 0.3s;
+}
+
+.button:hover {
+    cursor: pointer;
+    background: #282830;
+    transition-duration: 0.3s;
+    transform: translateY(-0.2rem);
+}

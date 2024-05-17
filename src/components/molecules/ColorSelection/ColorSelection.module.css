@@ -1,0 +1,52 @@
+.colorSelect{
+    margin-top: 1rem;
+    margin-left: 1.5rem;
+}
+
+.titleGroup h2 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+.titleGroup p {
+    font-size: 0.8rem;
+    font-weight: 300;
+    margin: 0;
+}
+
+.colorGroup {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    gap: 1.5rem;
+}
+
+.colorGroup li > button {
+    border: none;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    width: 3rem;
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+    cursor: pointer;
+}
+
+.colorGroup li > button::before {
+    content: "";
+    position: absolute;
+    width: 3rem;
+    height: 1rem;
+    background: var(--dark-color-accent);
+    top: 0;
+    left: 0;
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+}
+
+.activeButton{
+    width: 3.3rem !important;
+    border: 0.2rem solid var(--static-background) !important;
+    outline: var(--toyota-red) solid 0.1rem;
+}

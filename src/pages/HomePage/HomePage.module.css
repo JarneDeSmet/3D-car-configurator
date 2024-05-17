@@ -1,0 +1,57 @@
+.toyotaTitle {
+    color: transparent;
+    -webkit-text-stroke-width: 0.1rem;
+    -webkit-text-stroke-color: var(--foreground);
+    font-size: clamp(4.8em, 20vw, 15rem);
+    line-height: 1;
+    font-family: Arial, sans-serif;
+    font-weight: 800;
+    text-align: center;
+    margin: 0;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    margin-top: 2rem;
+    margin-bottom: 10rem;
+}
+
+.pageTitle {
+    font-size: clamp(2rem, 5vw, 2.5rem);
+    font-weight: 400;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.img {
+    width: clamp(20rem, 100%, 45rem);
+    position: absolute;
+    top: 50%;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+@media (min-width: 55em) {
+    .section {
+        margin-top: 1rem;
+        margin-bottom: 10rem;
+    }
+
+    .toyotaTitle {
+        -webkit-text-stroke-width: 0.3rem;
+    }
+    .pageTitle{
+        margin-top: 0;
+    }
+
+
+}

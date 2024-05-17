@@ -1,0 +1,72 @@
+.menu {
+    background: var(--radial-background);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: .25rem;
+
+    border-bottom: 1px solid #000000;
+    height: 3rem;
+}
+
+.buttons button {
+    background: none;
+    border: none;
+}
+
+.buttonWrapper {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    overflow: auto;
+    height: 3rem;
+}
+
+.nextPrevious {
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttonWrapper button {
+    display: none;
+    max-width: 10rem;
+    width: 100%;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+.buttonWrapper button.active {
+    display: block;
+    border-bottom: var(--toyota-red) solid 3px;
+
+}
+
+.selection {
+    height: 9.313rem;
+    overflow-y: hidden;
+}
+
+
+@media screen and (min-width: 768px) {
+    .buttonWrapper {
+        justify-content: space-between;
+    }
+
+    .buttonWrapper button {
+        display: block;
+    }
+
+    .nextPrevious {
+        display: none;
+    }
+}

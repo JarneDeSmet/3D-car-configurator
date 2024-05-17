@@ -1,0 +1,76 @@
+.card {
+    border-bottom: solid 1px var(--foreground);
+    width: clamp(10rem, 90vw, 25rem);
+    transition-duration: 0.3s;
+    padding: 0.5rem;
+    position: relative;
+    cursor: pointer;
+
+}
+.card:hover {
+    transform: translateY(-0.2rem);
+}
+.card::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: -2px;
+    left: 0;
+    background-color: var(--toyota-red);
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+
+}
+
+.card:hover::after {
+    visibility: visible;
+    width: 100%;
+}
+
+.card h1 {
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.card h2 {
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: var(--light-blue);
+    margin: 0 0 1.5rem;
+}
+
+.card div:first-child {
+    /*width: 100%;*/
+    background: red;
+}
+
+.card div {
+    display: flex;
+    justify-content: center;
+}
+
+.card img {
+    width: 45%;
+    object-fit: cover;
+}
+
+.card h3 {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-top: 1rem;
+    margin-bottom: 0.25rem;
+}
+
+.card p {
+    font-size: 1rem;
+    margin-top: 0;
+    color: var(--light-grey);
+}
+
+.link{
+    text-decoration: none;
+    color: inherit;
+}

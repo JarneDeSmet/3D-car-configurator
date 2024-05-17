@@ -1,0 +1,31 @@
+.button {
+    border-radius: 0 6px 6px 0;
+    border: none;
+    background: var(--static-background);
+    text-align: start;
+    padding: .5rem .5rem .5rem 1.5rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    gap: 1rem;
+    width: fit-content;
+}
+
+.button p {
+    font-size: 1.2rem;
+    margin: 0;
+    font-weight: 500;
+    display: none;
+}
+
+.button:hover {
+    background: red;
+}
+
+.button:hover p {
+    display: block;
+}
+
+.button img {
+    width: 2rem;
+}
