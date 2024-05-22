@@ -1,0 +1,110 @@
+.engineSelection {
+    margin-left: 1rem;
+    padding-right: 1rem;
+    overflow-y: auto;
+}
+
+.cardList {
+    display: flex;
+    list-style: none;
+    gap: 1rem;
+    padding-left: 0;
+    padding-bottom: 0.5rem;
+    width: 100%;
+    overflow-x: auto;
+
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem 1rem 1rem 1rem;
+    background: #e7e7e7;
+    color: #000000;
+    border-radius: 2px;
+    width: 30rem;
+    border: none;
+}
+
+.cardHead {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    width: 100%;
+}
+
+
+.cardHead span {
+    color: var(--light-blue);
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    margin-left: 0.5rem;
+}
+
+.cardHead div {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+}
+
+.cardHead h2 {
+    margin: 0;
+    font-size: 1rem;
+    text-align: start;
+}
+
+.cardHead p {
+    margin: 0;
+}
+
+.moreInfo {
+    background: none;
+    color: var(--light-grey);
+    border: none;
+    border-bottom: var(--light-grey) 1px solid;
+    transition-duration: 0.2s;
+}
+
+.moreInfo:hover {
+    cursor: pointer;
+    color: var(--foreground-black);
+    transition-duration: 0.2s;
+}
+
+.detailsList {
+    padding-left: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    list-style: initial;
+}
+
+.detailsList li::marker {
+    color: var(--toyota-red);
+}
+.active {
+    position: relative;
+    border-bottom: var(--toyota-red) 5px solid;
+}
+
+.hide{
+    display: none !important;
+}
+
+.active .check {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: .25rem;
+    right: .25rem;
+    padding: 0.1rem;
+    background: var(--foreground);
+    border-radius: 50%;
+    box-shadow: 4px 4px 46px 0 rgba(0,0,0,0.5);
+}
+
+.icon {
+    color: var(--static-background);
+}

@@ -12,7 +12,7 @@
 }
 
 .button p {
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin: 0;
     font-weight: 500;
     display: none;
@@ -27,5 +27,5 @@
 }
 
 .button img {
-    width: 2rem;
+    width: 1.5rem;
 }

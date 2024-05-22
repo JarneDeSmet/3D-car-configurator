@@ -1,0 +1,79 @@
+.rimsSelection {
+    margin-left: 1rem;
+    padding-right: 1rem;
+    overflow-y: auto;
+}
+
+.rimsSelection ul {
+    display: flex;
+    list-style: none;
+    gap: 1rem;
+    padding-left: 0;
+    width: 100%;
+    overflow-x: auto;
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem 4rem 1rem 1rem;
+        background: #e7e7e7;
+    color: #000000;
+    border-radius: 2px;
+    min-width: fit-content;
+    width: 30rem;
+
+    border: none;
+}
+
+.card div {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.card h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.card p {
+    font-size: 0.9rem;
+    font-weight: 400;
+    margin: 0;
+    text-decoration: underline;
+}
+
+.card img {
+    width: 5rem;
+    height: 5rem;
+}
+
+.active {
+    position: relative;
+    border-bottom: var(--toyota-red) 5px solid;
+}
+
+.hide{
+    display: none !important;
+}
+
+.active .check {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: .25rem;
+    right: .25rem;
+    padding: 0.1rem;
+    background: var(--foreground);
+    border-radius: 50%;
+    box-shadow: 4px 4px 46px 0 rgba(0,0,0,0.5);
+}
+
+.icon {
+    color: var(--static-background);
+}

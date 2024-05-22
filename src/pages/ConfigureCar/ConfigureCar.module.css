@@ -1,7 +1,9 @@
 .main {
     background: radial-gradient(circle, #181818 0%, #0C0C0C 100%);
 }
-
+.link{
+    text-decoration: none;
+}
 .section {
     display: flex;
     flex-direction: column;

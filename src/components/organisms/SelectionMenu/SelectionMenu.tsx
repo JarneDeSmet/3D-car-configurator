@@ -3,9 +3,12 @@ import { RiArrowLeftSLine, RiArrowRightSLine } from "@remixicon/react";
 import styles from "./SelectionMenu.module.css";
 import ColorSelection from "../../molecules/ColorSelection/ColorSelection";
 import WheelSelection from "../../molecules/WheelSelection/WheelSelection";
+import { useStoreSelector } from "../../../Redux/store";
+import EngineSelection from "../../molecules/EngineSelection/EngineSelection";
 
 const SelectionMenu: FC = () => {
-    const buttons = ["Color", "Wheels", "Engine", "Exterieur", "Interieur", "Samenvatting"];
+    const selectedCarId = useStoreSelector((state) => state.car.id);
+    const buttons = ["Color", "Wheels", "Engine", "Interieur", "packs", "Samenvatting"];
     const [activeIndex, setActiveIndex] = useState(0);
     return (
         <div className={styles.menu}>
@@ -42,8 +45,9 @@ const SelectionMenu: FC = () => {
                 </button>
             </div>
             <div className={styles.selection}>
-                {activeIndex === 0 && <ColorSelection />}
-                {activeIndex === 1 && <WheelSelection />}
+                {activeIndex === 0 && <ColorSelection carId={selectedCarId} />}
+                {activeIndex === 1 && <WheelSelection carId={selectedCarId} />}
+                {activeIndex === 2 && <EngineSelection carId={selectedCarId} />}
             </div>
         </div>
     );

@@ -1,6 +1,10 @@
 .colorSelect{
     margin-top: 1rem;
     margin-left: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    overflow-x: auto;
 }
 
 .titleGroup h2 {
@@ -20,7 +24,7 @@
     align-items: center;
     list-style: none;
     padding: 0;
-    gap: 1.5rem;
+    gap: .5rem;
 }
 
 .colorGroup li > button {

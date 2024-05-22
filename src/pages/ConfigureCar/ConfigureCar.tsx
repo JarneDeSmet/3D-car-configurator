@@ -1,4 +1,5 @@
 import { FC } from "react";
+import { Link } from "react-router-dom";
 import AppHeader from "../../components/organisms/AppHeader/AppHeader";
 import SelectionMenu from "../../components/organisms/SelectionMenu/SelectionMenu";
 import CarScene from "../../components/organisms/CarScene/CarScene";
@@ -11,7 +12,10 @@ const ConfigureCar: FC = () => {
             <AppHeader configurator />
 
             <div className={styles.section}>
-                <SideButton text="Select car" icon="select-car" />
+                <Link className={styles.link} to="/select-car">
+                    <SideButton text="Select car" icon="select-car" />
+                </Link>
+
                 <SideButton text="Freedrive" icon="freedrive" />
                 <SideButton text="Save & share" icon="save-share" />
             </div>

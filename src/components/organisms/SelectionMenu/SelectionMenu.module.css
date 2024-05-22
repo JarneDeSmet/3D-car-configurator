@@ -41,13 +41,13 @@
     display: none;
     max-width: 10rem;
     width: 100%;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     cursor: pointer;
 }
 
 .buttonWrapper button.active {
     display: block;
-    border-bottom: var(--toyota-red) solid 3px;
+    border-bottom: var(--toyota-red) solid 2px;
 
 }
 
