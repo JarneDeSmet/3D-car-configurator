@@ -19,6 +19,7 @@
     --static-background: #282830;
     --dark-color-accent: #1C1F21;
     --radial-background: radial-gradient(circle, #363641 0%, #282830 100%);
+    --popUpBackground: rgba(0, 0, 0, 0.4);
     color: var(--foreground);
     background: var(--radial-background);
 }

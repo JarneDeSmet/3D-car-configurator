@@ -1,0 +1,98 @@
+.container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: var(--popUpBackground);
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    background: var(--radial-background);
+    display: flex;
+    flex-direction: column;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    padding-bottom: 4rem;
+    padding-top: 1rem;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 4rem;
+}
+
+.card h2 {
+    text-align: center;
+    font-size: 1.3rem;
+    margin: 0;
+    font-weight: 400;
+}
+
+.button {
+    background: none;
+    border: solid 1px var(--foreground);
+    font-size: 1rem;
+    padding: 0.5rem 3rem;
+    transition-duration: 0.3s;
+}
+
+.button:hover {
+    cursor: pointer;
+    background: #282830;
+    transition-duration: 0.3s;
+    transform: translateY(-0.2rem);
+}
+
+.button p {
+    margin: 0;
+    font-weight: 300;
+}
+
+.other {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 4rem;
+}
+
+.other div {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.shareTest {
+    width: 2rem;
+    height: 2rem;
+    border: solid 1px var(--foreground);
+}
+
+.other p {
+    font-size: 0.9rem;
+    border-bottom: solid 1px var(--foreground);
+    width: 70%;
+    text-align: center;
+    padding-bottom: 0.5rem;
+
+}
+
+.showMessage {
+    margin: 0;
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--light-blue);
+}
+
+.hidemessage {
+    display: none;
+}

@@ -1,10 +1,10 @@
 import { FC } from "react";
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
+import { Environment, OrbitControls } from "@react-three/drei";
 import styles from "./CarScene.module.css";
 import CarModel from "../../molecules/CarModel/CarModel";
 
-const carScene: FC = () => {
+const CarScene: FC = () => {
     return (
         <div className={styles.container}>
             <Canvas
@@ -14,12 +14,18 @@ const carScene: FC = () => {
                 camera={{ position: [5, 3, 5], fov: 25 }}
                 gl={{ preserveDrawingBuffer: true }}
             >
-                {/*<axesHelper args={[5]} />*/}
                 <OrbitControls maxPolarAngle={Math.PI - Math.PI / 2} enablePan enableZoom enableRotate />
                 <CarModel />
+                <Environment preset="city" />
+                {/*<ambientLight intensity={2} />*/}
+                {/*<directionalLight position={[-4, 2, -4]} intensity={1} />*/}
+                {/*<directionalLight position={[4, 2, 4]} intensity={1} />*/}
+
+                {/*<directionalLight position={[4, 2, -4]} intensity={1} />*/}
+                {/*<directionalLight position={[-4, 2, 4]} intensity={1} />*/}
             </Canvas>
         </div>
     );
 };
 
-export default carScene;
+export default CarScene;

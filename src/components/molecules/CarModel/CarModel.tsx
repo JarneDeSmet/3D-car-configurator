@@ -25,7 +25,7 @@ const CarModel: FC = () => {
     const dispatch = useStoreDispatch();
     const carConfiguration = useStoreSelector((state) => state.car);
     const possibleColors = carData.find((car) => car.id === carConfiguration.id)?.possibleColors;
-    const { scene: carScene } = useGLTF("/src/assets/Supra-Striped2.glb");
+    const { scene: carScene } = useGLTF("/src/assets/stripped2.0.glb");
     const { scene: platform } = useGLTF("/src/assets/platform.glb");
     const { scene: wheelScene } = useGLTF(`/src/assets/${carConfiguration.rims}.glb`);
 
@@ -112,7 +112,6 @@ const CarModel: FC = () => {
         <>
             <mesh>
                 <primitive object={configuredCar} />
-                <Environment preset="city" />
             </mesh>
             <mesh>
                 <primitive object={platform} />

@@ -5,6 +5,7 @@ import SelectionMenu from "../../components/organisms/SelectionMenu/SelectionMen
 import CarScene from "../../components/organisms/CarScene/CarScene";
 import styles from "./ConfigureCar.module.css";
 import SideButton from "../../components/atoms/SideButton/SideButton";
+import SaveAndShare from "../../components/organisms/SaveAndShare/SaveAndShare";
 
 const ConfigureCar: FC = () => {
     return (
@@ -16,7 +17,6 @@ const ConfigureCar: FC = () => {
                     <SideButton text="Select car" icon="select-car" />
                 </Link>
 
-                <SideButton text="Freedrive" icon="freedrive" />
                 <SideButton text="Save & share" icon="save-share" />
             </div>
             <div className={styles.namePrice}>
@@ -25,6 +25,7 @@ const ConfigureCar: FC = () => {
             </div>
 
             <CarScene />
+            {/*<SaveAndShare />*/}
             <SelectionMenu />
         </main>
     );

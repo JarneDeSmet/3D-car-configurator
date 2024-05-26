@@ -41,9 +41,9 @@ export const carData: CarDataType[] = [
                 type: colorTypes.glossy,
                 cost: 0,
                 colors: [
-                    { name: "red", hex: "#A40611" },
-                    { name: "green", hex: "#04791D" },
-                    { name: "grey", hex: "#a8a7a7" },
+                    { name: "red", hex: "#431217" },
+                    { name: "green", hex: "#104d1e" },
+                    { name: "grey", hex: "#c4c2c2" },
                 ],
             },
             {

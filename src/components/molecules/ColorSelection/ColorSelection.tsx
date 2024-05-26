@@ -20,7 +20,7 @@ const ColorSelection: FC<props> = ({ carId }) => {
     return (
         <div className={styles.colorSelect}>
             {possibleColors?.map((colorType) => (
-                <div>
+                <div key={colorType.type}>
                     <div className={styles.titleGroup}>
                         <h2>{colorType.type}</h2>
                         <p>{colorType.cost === 0 ? "included" : `+ €${colorType.cost}`}</p>

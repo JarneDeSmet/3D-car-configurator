@@ -19,7 +19,7 @@
 }
 
 .button:hover {
-    background: red;
+    background: var(--radial-background);
 }
 
 .button:hover p {
