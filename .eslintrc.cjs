@@ -1,13 +1,21 @@
 module.exports = {
     root: true,
     env: {browser: true, es2020: true},
-    extends: ["marlon/typescript", "prettier"],
+    extends: ["eslint:recommended", "plugin:@typescript-eslint/eslint-recommended", "plugin:@typescript-eslint/recommended", "prettier",],
     ignorePatterns: ['dist'],
     parser: '@typescript-eslint/parser',
     parserOptions: {
         ecmaVersion: "latest", sourceType: "module", project: "./tsconfig.json",
     },
-    plugins: ['react-refresh', "@typescript-eslint"],
+    plugins: ['react-refresh', "@typescript-eslint", "react-hooks", "import", "jsx-a11y", "react"],
+    settings: {
+        react: {version: "detect"},
+        "import/resolver": {
+            node: {
+                extensions: [".js", ".jsx", ".ts", ".tsx"],
+            },
+        },
+    },
     rules: {
         "react/no-unknown-property": "off",
         "react/function-component-definition": [2, {
@@ -26,5 +34,20 @@ module.exports = {
             allowHigherOrderFunctions: true, allowTypedFunctionExpressions: true,
         },],
         "@typescript-eslint/restrict-template-expressions": ["error", {allowNumber: true}],
+        "@typescript-eslint/no-unused-vars": ["error", {
+            "argsIgnorePattern": "^_", "ignoreRestSiblings": true
+        }],
+        "import/order": ["warn"],
+        "no-console": ["error", {
+            "allow": ["warn", "error"]
+        }],
+        "react/jsx-boolean-value": "warn",
+        "react/jsx-curly-brace-presence": "warn",
+        "react/jsx-key": "warn",
+        "react/no-array-index-key": "warn",
+        "react/prefer-stateless-function": "warn",
+        "react/self-closing-comp": "warn",
+        "react-hooks/rules-of-hooks": "error",
+        indent: 0
     },
 }

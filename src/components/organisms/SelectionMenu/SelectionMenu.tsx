@@ -1,10 +1,10 @@
 import { FC, useState } from "react";
 import { RiArrowLeftSLine, RiArrowRightSLine } from "@remixicon/react";
-import styles from "./SelectionMenu.module.css";
 import ColorSelection from "../../molecules/ColorSelection/ColorSelection";
 import WheelSelection from "../../molecules/WheelSelection/WheelSelection";
 import { useStoreSelector } from "../../../Redux/store";
 import EngineSelection from "../../molecules/EngineSelection/EngineSelection";
+import styles from "./SelectionMenu.module.css";
 
 const SelectionMenu: FC = () => {
     const selectedCarId = useStoreSelector((state) => state.car.id);

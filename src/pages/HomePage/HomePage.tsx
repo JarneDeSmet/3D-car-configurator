@@ -1,8 +1,8 @@
 import { FC } from "react";
 import { Link } from "react-router-dom";
 import AppHeader from "../../components/organisms/AppHeader/AppHeader";
-import styles from "./HomePage.module.css";
 import MainButton from "../../components/atoms/MainButton/MainButton";
+import styles from "./HomePage.module.css";
 
 const HomePage: FC = () => {
     return (

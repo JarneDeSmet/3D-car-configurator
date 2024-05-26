@@ -4,7 +4,7 @@ import "./global.css";
 import { Provider } from "react-redux";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { store } from "./Redux/store";
-import Loading from "./components/organisms/Loading/Loading.tsx";
+import Loading from "./components/organisms/Loading/Loading";
 
 const HomePage = lazy(() => import("./pages/HomePage/HomePage"));
 const ErrorPage = lazy(() => import("./pages/ErrorPage/ErrorPage"));

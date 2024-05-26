@@ -1,5 +1,5 @@
 import { FC, useEffect, useMemo } from "react";
-import { Environment, useGLTF } from "@react-three/drei";
+import { useGLTF } from "@react-three/drei";
 import {
     Material,
     Mesh,

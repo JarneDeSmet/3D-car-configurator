@@ -1,8 +1,8 @@
 import { FC } from "react";
 import { useStoreDispatch, useStoreSelector } from "../../../Redux/store";
 import { setColor } from "../../../Redux/carSlice";
-import styles from "./ColorSelection.module.css";
 import { carData } from "../../../utils/carData";
+import styles from "./ColorSelection.module.css";
 
 type props = {
     carId: string;

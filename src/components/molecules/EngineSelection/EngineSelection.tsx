@@ -1,9 +1,9 @@
 import { FC } from "react";
 import { RiCheckLine } from "@remixicon/react";
-import styles from "./EngineSelection.module.css";
 import { carData } from "../../../utils/carData";
 import { useStoreDispatch, useStoreSelector } from "../../../Redux/store";
 import { setEngine } from "../../../Redux/carSlice";
+import styles from "./EngineSelection.module.css";
 
 type props = {
     carId: string;
@@ -23,7 +23,7 @@ const EngineSelection: FC<props> = ({ carId }) => {
         <div className={styles.engineSelection}>
             <ul className={styles.cardList}>
                 {possibleEngines?.map((engine) => (
-                    <li id={engine.id}>
+                    <li key={engine.id} id={engine.id}>
                         <button
                             type="button"
                             onClick={() => setURL(engine.id)}
@@ -42,7 +42,7 @@ const EngineSelection: FC<props> = ({ carId }) => {
                             </div>
                             <ul className={styles.detailsList}>
                                 {engine.shortDetails.map((detail) => (
-                                    <li>{detail}</li>
+                                    <li key={detail}>{detail}</li>
                                 ))}
                             </ul>
                             <div className={car.engine === engine.id ? styles.check : styles.hide}>

@@ -3,9 +3,8 @@ import { Link } from "react-router-dom";
 import AppHeader from "../../components/organisms/AppHeader/AppHeader";
 import SelectionMenu from "../../components/organisms/SelectionMenu/SelectionMenu";
 import CarScene from "../../components/organisms/CarScene/CarScene";
-import styles from "./ConfigureCar.module.css";
 import SideButton from "../../components/atoms/SideButton/SideButton";
-import SaveAndShare from "../../components/organisms/SaveAndShare/SaveAndShare";
+import styles from "./ConfigureCar.module.css";
 
 const ConfigureCar: FC = () => {
     return (

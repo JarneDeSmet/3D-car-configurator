@@ -1,9 +1,9 @@
 import { FC } from "react";
 import { Link } from "react-router-dom";
-import styles from "./CarCard.module.css";
 import { useStoreDispatch } from "../../../Redux/store";
 import { setCarId } from "../../../Redux/carSlice";
 import { carData } from "../../../utils/carData";
+import styles from "./CarCard.module.css";
 
 type CarCardProps = {
     id: string;

@@ -1,8 +1,8 @@
 import { FC } from "react";
 import AppHeader from "../../components/organisms/AppHeader/AppHeader";
-import styles from "./SelectCar.module.css";
 import CarCard from "../../components/molecules/CarCard/CarCard";
 import { carData } from "../../utils/carData";
+import styles from "./SelectCar.module.css";
 
 const SelectCar: FC = () => {
     return (

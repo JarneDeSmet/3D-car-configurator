@@ -1,9 +1,9 @@
 import { FC } from "react";
 import { RiCheckLine } from "@remixicon/react";
 import { carData } from "../../../utils/carData";
-import styles from "./WheelSelection.module.css";
 import { setRims } from "../../../Redux/carSlice";
 import { useStoreDispatch, useStoreSelector } from "../../../Redux/store";
+import styles from "./WheelSelection.module.css";
 
 type props = {
     carId: string;
@@ -21,7 +21,7 @@ const WheelSelection: FC<props> = ({ carId }) => {
         <div className={styles.rimsSelection}>
             <ul>
                 {possibleRims?.map((rim) => (
-                    <li>
+                    <li key={rim.id}>
                         <button
                             type="button"
                             onClick={() => setURL(rim.id)}
