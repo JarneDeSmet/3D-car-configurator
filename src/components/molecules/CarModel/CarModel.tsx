@@ -25,9 +25,9 @@ const CarModel: FC = () => {
     const dispatch = useStoreDispatch();
     const carConfiguration = useStoreSelector((state) => state.car);
     const possibleColors = carData.find((car) => car.id === carConfiguration.id)?.possibleColors;
-    const { scene: carScene } = useGLTF("/src/assets/stripped2.0.glb");
-    const { scene: platform } = useGLTF("/src/assets/platform.glb");
-    const { scene: wheelScene } = useGLTF(`/src/assets/${carConfiguration.rims}.glb`);
+    const { scene: carScene } = useGLTF("/assets/stripped2.0.glb");
+    const { scene: platform } = useGLTF("/assets/platform.glb");
+    const { scene: wheelScene } = useGLTF(`/assets/${carConfiguration.rims}.glb`);
 
     useEffect(() => {
         const hashValue = window.location.hash;
