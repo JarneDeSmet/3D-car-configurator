@@ -35,7 +35,7 @@ export const carData: CarDataType[] = [
         displayTitle: "Toyota Supra",
         basePrice: 54710,
         engine: engineTypes.petrol,
-        carImage: "/src/assets/cars/supra.png",
+        carImage: "../src/assets/cars/supra.png",
         possibleColors: [
             {
                 type: colorTypes.glossy,
