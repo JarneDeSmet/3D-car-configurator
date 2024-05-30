@@ -1,20 +1,36 @@
 import { FC, useState } from "react";
 import { RiCloseLine } from "@remixicon/react";
 import QRCode from "qrcode.react";
+import { useNavigate } from "react-router-dom";
 import { useStoreDispatch, useStoreSelector } from "../../../Redux/store";
 import { setSavePopup } from "../../../Redux/settingsSlice";
+import { saveToAccount } from "../../../utils/utils";
+import { setPendingSave } from "../../../Redux/userSlice";
 import styles from "./SaveAndShare.module.css";
 
 const SaveAndShare: FC = () => {
     const dispatch = useStoreDispatch();
     const open = useStoreSelector((state) => state.settings.savePopup);
     const [message, setMessage] = useState("");
+    const user = useStoreSelector((state) => state.user.user);
+    const car = useStoreSelector((state) => state.car);
+    const navigate = useNavigate();
+
     const copyLink = (): void => {
         navigator.clipboard.writeText(window.location.href);
         setMessage("Link copied to clipboard!");
         setTimeout(() => {
             setMessage("");
         }, 2000);
+    };
+
+    const save = async (): Promise<void> => {
+        if (user) {
+            await saveToAccount(user, { url: window.location.href, car });
+        } else {
+            dispatch(setPendingSave({ url: window.location.href, car }));
+            navigate("/login");
+        }
     };
 
     return (
@@ -30,7 +46,7 @@ const SaveAndShare: FC = () => {
                     <button type="button" onClick={() => copyLink()} className={styles.button}>
                         <p>Copy link</p>
                     </button>
-                    <button type="button" className={styles.button}>
+                    <button type="button" onClick={() => save()} className={styles.button}>
                         <p> Save to my account</p>
                     </button>
                 </div>

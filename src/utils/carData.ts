@@ -70,13 +70,13 @@ export const carData: CarDataType[] = [
                 id: "19InchBlack",
                 displayTitle: '19" zwart lichtmetalen velgen',
                 cost: 0,
-                image: "/src/assets/rims/19InchBlack.png",
+                image: "/assets/rims/19InchBlack.png",
             },
             {
                 id: "19InchSilver",
                 displayTitle: '19" zilver lichtmetalen velgen',
                 cost: 0,
-                image: "/src/assets/rims/19InchSilver.png",
+                image: "/assets/rims/19InchSilver.png",
             },
         ],
         possibleEngines: [

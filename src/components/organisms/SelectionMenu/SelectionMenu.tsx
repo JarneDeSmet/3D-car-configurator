@@ -9,7 +9,7 @@ import styles from "./SelectionMenu.module.css";
 
 const SelectionMenu: FC = () => {
     const selectedCarId = useStoreSelector((state) => state.car.id);
-    const buttons = ["Color", "Wheels", "Engine", "packs", "overview"];
+    const buttons = ["Color", "Wheels", "Engine", "Packs", "Overview"];
     const [activeIndex, setActiveIndex] = useState(0);
     return (
         <div className={styles.menu}>

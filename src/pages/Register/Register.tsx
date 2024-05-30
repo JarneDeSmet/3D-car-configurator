@@ -1,14 +1,17 @@
 import { ChangeEvent, FC, FormEvent, useState } from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
+import { Link } from "react-router-dom";
+import { doc, setDoc } from "@firebase/firestore";
 import AppHeader from "../../components/organisms/AppHeader/AppHeader";
-import styles from "../HomePage/HomePage.module.css";
+import styles from "../Login/Login.module.css";
 import FormInput from "../../components/atoms/FormInput/FormInput";
-import { auth } from "../../firebase";
+import { auth, firestore } from "../../firebase";
 
 const Register: FC = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    // const [error, setError] = useState("");
+    const [repeatPassword, setRepeat] = useState("");
+    const [error, setError] = useState("");
 
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
         const { name, value } = event.target;
@@ -16,40 +19,48 @@ const Register: FC = () => {
             setEmail(value);
         } else if (name === "password") {
             setPassword(value);
+        } else if (name === "repeat") {
+            setRepeat(value);
         }
     };
 
     const handleRegistration = async (event: FormEvent) => {
         try {
             event.preventDefault();
-            // Register the user using Firebase auth
-            // await createUserWithEmailAndPassword(auth, email, password);
+
+            if (email === "" || password === "" || repeatPassword === "") {
+                setError("Please fill in all fields");
+                return;
+            }
+            if (password !== repeatPassword) {
+                setError("Passwords do not match");
+                return;
+            }
             const { user } = await createUserWithEmailAndPassword(auth, email, password);
 
-            if (user) {
-                // Create a document for the user in the "Users" collection with their email and empty save configurations
-                // await setDoc(doc(firestore, "Users", user.email), {
-                //     email: user.email,
-                //     saveConfigurations: [],
-                // });
-                // Redirect the user to the login page or another page
+            if (user && user.email) {
+                await setDoc(doc(firestore, "Users", user.email), {
+                    email: user.email,
+                    savedConfigurations: [],
+                });
             }
 
-            // Redirect the user to the login page or another page
+            setEmail("");
+            setError("");
+            setPassword("");
         } catch (error) {
-            // Handle registration error
-            // setError(error.message);
+            if (error instanceof Error) setError(error.message);
         }
     };
 
     return (
         <>
             <AppHeader />
-            <main className={styles.main}>
+            <main>
                 <h1 className={styles.pageTitle}>Register</h1>
-                {/*<p>{error}</p>*/}
-                <form onSubmit={handleRegistration}>
-                    <p>{email}</p>
+                {error && <p className={styles.error}>{error}</p>}
+
+                <form onSubmit={handleRegistration} className={styles.form}>
                     <FormInput
                         label="Email"
                         type="email"
@@ -66,7 +77,24 @@ const Register: FC = () => {
                         value={password}
                         onChange={handleChange}
                     />
-                    <button type="submit">Register</button>
+                    <FormInput
+                        label="Repeat Password"
+                        type="password"
+                        name="repeat"
+                        id="repeat"
+                        value={repeatPassword}
+                        onChange={handleChange}
+                    />
+                    <button className={styles.button} type="submit">
+                        Register
+                    </button>
+
+                    <p className={styles.navigateText}>
+                        Or Log in{" "}
+                        <Link className={styles.link} to="/login">
+                            HERE
+                        </Link>
+                    </p>
                 </form>
             </main>
         </>

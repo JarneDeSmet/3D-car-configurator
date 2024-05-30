@@ -2,10 +2,17 @@ import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { User } from "firebase/auth";
 import { auth } from "../firebase";
+import { CarState } from "./carSlice";
+
+export type savedConfiguration = {
+    car: CarState;
+    url: string;
+};
 
 const initialState = {
     user: null as User | null,
     saveConfigurations: [] as never[],
+    pendingSave: null as savedConfiguration | null,
 };
 
 type loginPayload = {
@@ -28,8 +35,10 @@ const userSlice = createSlice({
     initialState: initialState,
     reducers: {
         documentChanged: (state, action: PayloadAction<never[]>) => {
-            // Update the array in the Redux store
             state.saveConfigurations = action.payload;
+        },
+        setPendingSave: (state, action: PayloadAction<savedConfiguration | null>) => {
+            state.pendingSave = action.payload;
         },
     },
     extraReducers: (builder) => {
@@ -38,5 +47,5 @@ const userSlice = createSlice({
         });
     },
 });
-
+export const { documentChanged, setPendingSave } = userSlice.actions;
 export default userSlice.reducer;

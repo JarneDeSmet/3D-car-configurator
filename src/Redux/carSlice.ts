@@ -1,12 +1,20 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { CarDataType } from "../utils/carData";
 
-const initialState = {
-    id: "supra" as string,
-    color: "red-Glossy" as string,
-    rims: "19InchBlack" as string,
-    engine: "3.0Twin-scrollTurbo" as string,
-    sportPackage: false as boolean,
+export type CarState = {
+    id: string;
+    color: string;
+    rims: string;
+    engine: string;
+    sportPackage: boolean;
+};
+
+const initialState: CarState = {
+    id: "supra",
+    color: "red-Glossy",
+    rims: "19InchBlack",
+    engine: "3.0Twin-scrollTurbo",
+    sportPackage: false,
 };
 
 const carSlice = createSlice({

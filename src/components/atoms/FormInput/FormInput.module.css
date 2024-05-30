@@ -1,0 +1,18 @@
+.input{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+}
+
+.input input{
+    background: var(--forminput-background);
+    border: solid 1px var(--foreground);
+    padding: 0.4rem 0.5rem;
+    font-size: 1rem;
+  }
+
+.input label{
+    font-size: 1rem;
+    margin-bottom: 0.2rem;
+}
