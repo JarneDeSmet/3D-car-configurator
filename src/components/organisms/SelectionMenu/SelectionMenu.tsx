@@ -4,11 +4,12 @@ import ColorSelection from "../../molecules/ColorSelection/ColorSelection";
 import WheelSelection from "../../molecules/WheelSelection/WheelSelection";
 import { useStoreSelector } from "../../../Redux/store";
 import EngineSelection from "../../molecules/EngineSelection/EngineSelection";
+import PackagesSelection from "../../molecules/PackagesSelection/PackagesSelection";
 import styles from "./SelectionMenu.module.css";
 
 const SelectionMenu: FC = () => {
     const selectedCarId = useStoreSelector((state) => state.car.id);
-    const buttons = ["Color", "Wheels", "Engine", "Interieur", "packs", "Samenvatting"];
+    const buttons = ["Color", "Wheels", "Engine", "packs", "overview"];
     const [activeIndex, setActiveIndex] = useState(0);
     return (
         <div className={styles.menu}>
@@ -48,6 +49,7 @@ const SelectionMenu: FC = () => {
                 {activeIndex === 0 && <ColorSelection carId={selectedCarId} />}
                 {activeIndex === 1 && <WheelSelection carId={selectedCarId} />}
                 {activeIndex === 2 && <EngineSelection carId={selectedCarId} />}
+                {activeIndex === 3 && <PackagesSelection carId={selectedCarId} />}
             </div>
         </div>
     );

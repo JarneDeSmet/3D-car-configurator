@@ -27,6 +27,13 @@ export type CarDataType = {
         gearbox: gearboxTypes;
         shortDetails: string[];
     }[];
+    possiblePackages: {
+        id: string;
+        displayTitle: string;
+        shortDetails: string[];
+        cost: number;
+        image: string;
+    }[];
 };
 
 export const carData: CarDataType[] = [
@@ -41,8 +48,8 @@ export const carData: CarDataType[] = [
                 type: colorTypes.glossy,
                 cost: 0,
                 colors: [
-                    { name: "red", hex: "#431217" },
-                    { name: "green", hex: "#104d1e" },
+                    { name: "red", hex: "#9C0007" },
+                    { name: "green", hex: "#A74814" },
                     { name: "grey", hex: "#c4c2c2" },
                 ],
             },
@@ -86,6 +93,15 @@ export const carData: CarDataType[] = [
                 engineTitle: "2.0 Twin-Scroll Turbo",
                 gearbox: gearboxTypes.automaticTwoWd,
                 shortDetails: ["Combined cycle consumption: 7.1 l/100km", "CO2 combined cycle: 161 g/km"],
+            },
+        ],
+        possiblePackages: [
+            {
+                id: "sport",
+                image: "/assets/packages/sport.png",
+                displayTitle: "Sport package",
+                cost: 700,
+                shortDetails: ["Spoiler"],
             },
         ],
     },

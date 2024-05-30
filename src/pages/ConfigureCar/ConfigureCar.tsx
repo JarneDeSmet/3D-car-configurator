@@ -4,9 +4,14 @@ import AppHeader from "../../components/organisms/AppHeader/AppHeader";
 import SelectionMenu from "../../components/organisms/SelectionMenu/SelectionMenu";
 import CarScene from "../../components/organisms/CarScene/CarScene";
 import SideButton from "../../components/atoms/SideButton/SideButton";
+import SaveAndShare from "../../components/organisms/SaveAndShare/SaveAndShare";
+import { useStoreDispatch } from "../../Redux/store";
+import { setSavePopup } from "../../Redux/settingsSlice";
 import styles from "./ConfigureCar.module.css";
 
 const ConfigureCar: FC = () => {
+    const dispatch = useStoreDispatch();
+
     return (
         <main className={styles.main}>
             <AppHeader configurator />
@@ -16,7 +21,9 @@ const ConfigureCar: FC = () => {
                     <SideButton text="Select car" icon="select-car" />
                 </Link>
 
-                <SideButton text="Save & share" icon="save-share" />
+                <div onClick={() => dispatch(setSavePopup(true))}>
+                    <SideButton text="Save & share" icon="save-share" />
+                </div>
             </div>
             <div className={styles.namePrice}>
                 <h1>Toyota Supra</h1>
@@ -24,7 +31,7 @@ const ConfigureCar: FC = () => {
             </div>
 
             <CarScene />
-            {/*<SaveAndShare />*/}
+            <SaveAndShare />
             <SelectionMenu />
         </main>
     );

@@ -15,8 +15,9 @@ const ColorSelection: FC<props> = ({ carId }) => {
 
     const setURL = (color: string): void => {
         dispatch(setColor(color));
-        window.location.hash = `color=${color}?rims=${car.rims}?engine=${car.engine}`;
+        window.location.hash = `color=${color}?rims=${car.rims}?engine=${car.engine}?sportPackage=${car.sportPackage}`;
     };
+
     return (
         <div className={styles.colorSelect}>
             {possibleColors?.map((colorType) => (

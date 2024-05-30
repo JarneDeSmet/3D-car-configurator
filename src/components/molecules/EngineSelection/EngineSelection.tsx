@@ -16,7 +16,7 @@ const EngineSelection: FC<props> = ({ carId }) => {
 
     const setURL = (id: string): void => {
         dispatch(setEngine(id));
-        window.location.hash = `color=${car.color}?rims=${car.rims}?engine=${id}`;
+        window.location.hash = `color=${car.color}?rims=${car.rims}?engine=${id}??sportPackage=${car.sportPackage}`;
     };
 
     return (

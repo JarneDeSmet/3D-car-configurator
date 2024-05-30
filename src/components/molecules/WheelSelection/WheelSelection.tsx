@@ -14,7 +14,7 @@ const WheelSelection: FC<props> = ({ carId }) => {
     const car = useStoreSelector((state) => state.car);
     const setURL = (rim: string): void => {
         dispatch(setRims(rim));
-        window.location.hash = `color=${car.color}?rims=${rim}?engine=${car.engine}`;
+        window.location.hash = `color=${car.color}?rims=${rim}?engine=${car.engine}?sportPackage=${car.sportPackage}`;
     };
 
     return (

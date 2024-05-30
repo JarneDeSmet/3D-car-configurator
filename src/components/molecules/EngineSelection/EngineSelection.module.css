@@ -27,6 +27,11 @@
     border: none;
 }
 
+.card:hover {
+    cursor: pointer;
+    background: #ffffff;
+}
+
 .cardHead {
     display: flex;
     align-items: start;
@@ -83,12 +88,13 @@
 .detailsList li::marker {
     color: var(--toyota-red);
 }
+
 .active {
     position: relative;
     border-bottom: var(--toyota-red) 5px solid;
 }
 
-.hide{
+.hide {
     display: none !important;
 }
 
@@ -102,7 +108,7 @@
     padding: 0.1rem;
     background: var(--foreground);
     border-radius: 50%;
-    box-shadow: 4px 4px 46px 0 rgba(0,0,0,0.5);
+    box-shadow: 4px 4px 46px 0 rgba(0, 0, 0, 0.5);
 }
 
 .icon {

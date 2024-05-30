@@ -28,6 +28,7 @@
     justify-content: center;
     overflow: auto;
     height: 3rem;
+    color: var(--foreground);
 }
 
 .nextPrevious {

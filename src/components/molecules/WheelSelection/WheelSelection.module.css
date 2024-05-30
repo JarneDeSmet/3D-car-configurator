@@ -18,13 +18,17 @@
     align-items: center;
     gap: 2rem;
     padding: 1rem 4rem 1rem 1rem;
-        background: #e7e7e7;
+    background: #e7e7e7;
     color: #000000;
     border-radius: 2px;
     min-width: fit-content;
     width: 30rem;
-
     border: none;
+}
+
+.card:hover {
+    cursor: pointer;
+    background: #ffffff;
 }
 
 .card div {
@@ -57,7 +61,7 @@
     border-bottom: var(--toyota-red) 5px solid;
 }
 
-.hide{
+.hide {
     display: none !important;
 }
 
@@ -71,7 +75,7 @@
     padding: 0.1rem;
     background: var(--foreground);
     border-radius: 50%;
-    box-shadow: 4px 4px 46px 0 rgba(0,0,0,0.5);
+    box-shadow: 4px 4px 46px 0 rgba(0, 0, 0, 0.5);
 }
 
 .icon {

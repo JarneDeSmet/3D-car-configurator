@@ -1,25 +1,28 @@
 import { FC, useState } from "react";
+import { RiCloseLine } from "@remixicon/react";
+import QRCode from "qrcode.react";
+import { useStoreDispatch, useStoreSelector } from "../../../Redux/store";
+import { setSavePopup } from "../../../Redux/settingsSlice";
 import styles from "./SaveAndShare.module.css";
 
 const SaveAndShare: FC = () => {
+    const dispatch = useStoreDispatch();
+    const open = useStoreSelector((state) => state.settings.savePopup);
     const [message, setMessage] = useState("");
     const copyLink = (): void => {
-        // window.alert(window.location.href);
         navigator.clipboard.writeText(window.location.href);
         setMessage("Link copied to clipboard!");
         setTimeout(() => {
             setMessage("");
         }, 2000);
     };
-    const shareOnFacebook = (): void => {
-        const url = encodeURIComponent(window.location.href);
-        const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
-        window.open(facebookShareUrl, "_blank");
-    };
 
     return (
-        <div className={styles.container}>
+        <div className={`${styles.container} ${!open ? styles.closed : ""}`}>
             <div className={styles.card}>
+                <button type="button" onClick={() => dispatch(setSavePopup(false))} className={styles.closeButton}>
+                    <RiCloseLine className={styles.closeIcon} />
+                </button>
                 <h2>Save & share</h2>
                 <p className={message ? styles.showMessage : styles.hidemessage}>{message}</p>
 
@@ -33,11 +36,12 @@ const SaveAndShare: FC = () => {
                 </div>
 
                 <div className={styles.other}>
-                    <p>OR</p>
-                    <div>
-                        <button onClick={() => shareOnFacebook()} type="button" className={styles.shareTest} />
-                        <button type="button" className={styles.shareTest} />
-                        <button type="button" className={styles.shareTest} />
+                    <div className={styles.otherText}>
+                        <p>OR</p>
+                        <p>Scan the qr code</p>
+                    </div>
+                    <div className={styles.qrCode}>
+                        <QRCode value={window.location.href} />
                     </div>
                 </div>
             </div>

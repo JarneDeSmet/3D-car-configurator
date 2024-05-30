@@ -1,0 +1,106 @@
+.packageSelection {
+    margin-left: 1rem;
+    padding-right: 1rem;
+    overflow-y: auto;
+}
+
+.cardList {
+    display: flex;
+    list-style: none;
+    gap: 1rem;
+    padding-left: 0;
+    padding-bottom: 0.5rem;
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 0.5rem;
+}
+
+.card {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem 1rem 1rem 1rem;
+    background: #e7e7e7;
+    color: #000000;
+    border-radius: 2px;
+    max-width: 30rem;
+    border: none;
+}
+
+.cardHead {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    width: 100%;
+    gap: 3rem;
+}
+
+.cardTitle {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    gap: 0.1rem;
+}
+
+.cardTitle h2 {
+    margin: 0;
+    font-size: 1rem;
+    text-align: start;
+}
+
+.cardTitle p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.moreInfo {
+    background: none;
+    color: var(--light-grey);
+    border: none;
+    border-bottom: var(--light-grey) 1px solid;
+    transition-duration: 0.2s;
+}
+
+.moreInfo:hover {
+    cursor: pointer;
+    color: var(--foreground-black);
+    transition-duration: 0.2s;
+}
+
+.detailsList {
+    margin-top: 1rem;
+    padding-left: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    list-style: initial;
+}
+
+.detailsList li::marker {
+    color: var(--toyota-red);
+}
+
+.active {
+    position: relative;
+    border-bottom: var(--toyota-red) 5px solid;
+}
+
+.hide {
+    display: none !important;
+}
+
+.active .check {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: .25rem;
+    right: .25rem;
+    padding: 0.1rem;
+    background: var(--foreground);
+    border-radius: 50%;
+    box-shadow: 4px 4px 46px 0 rgba(0, 0, 0, 0.5);
+}
+
+.icon {
+    color: var(--static-background);
+}

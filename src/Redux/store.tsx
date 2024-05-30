@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 import carSlice from "./carSlice";
+import settingsSlice from "./settingsSlice";
+import userSlice from "./userSlice";
 
 export const store = configureStore({
-    reducer: { car: carSlice },
+    reducer: { car: carSlice, settings: settingsSlice, user: userSlice },
 });
 
 export type RootState = ReturnType<typeof store.getState>;

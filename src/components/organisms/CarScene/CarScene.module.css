@@ -1,4 +1,7 @@
 .container {
     height: calc(100vh - 16.688rem);
 }
+.container:hover {
+    cursor: grab;
+}
 

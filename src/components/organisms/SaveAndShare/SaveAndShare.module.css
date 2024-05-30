@@ -11,14 +11,39 @@
     align-items: center;
 }
 
+.closed {
+    display: none;
+}
+
+.closeButton {
+    position: absolute;
+    right: 0.5rem;
+    top: .5rem;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.closeIcon {
+    width: 2rem;
+    height: 2rem;
+    color: var(--foreground);
+    transition-duration: 0.5s;
+}
+
+.closeIcon:hover {
+    cursor: pointer;
+    transform: scale(1.05) translateY(-0.1rem);
+    transition-duration: 0.5s;
+}
+
 .card {
+    position: relative;
     background: var(--radial-background);
     display: flex;
     flex-direction: column;
-    padding-left: 4rem;
-    padding-right: 4rem;
-    padding-bottom: 4rem;
-    padding-top: 1rem;
+    padding: 1rem 4rem 4rem;
 }
 
 .buttons {
@@ -60,16 +85,26 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 4rem;
+    margin-top: 2rem;
 }
 
-.other div {
+.otherText {
     display: flex;
-    gap: 1rem;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-
+    margin-bottom: 2rem;
 }
+
+.otherText p {
+    margin: 0;
+}
+
+.qrCode {
+    padding: 0.1rem;
+    background: #FEFEFE;
+}
+
 
 .shareTest {
     width: 2rem;
@@ -77,14 +112,14 @@
     border: solid 1px var(--foreground);
 }
 
-.other p {
-    font-size: 0.9rem;
-    border-bottom: solid 1px var(--foreground);
-    width: 70%;
-    text-align: center;
-    padding-bottom: 0.5rem;
+/*.other p {*/
+/*    font-size: 0.9rem;*/
+/*    border-bottom: solid 1px var(--foreground);*/
+/*    width: 70%;*/
+/*    text-align: center;*/
+/*    padding-bottom: 0.5rem;*/
 
-}
+/*}*/
 
 .showMessage {
     margin: 0;
