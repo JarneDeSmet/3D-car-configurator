@@ -11,6 +11,7 @@ import {
     Vector3,
 } from "three";
 
+import { useA11y } from "@react-three/a11y";
 import { useStoreDispatch, useStoreSelector } from "../../../Redux/store";
 import { setColor, setEngine, setRims, setSportPackage } from "../../../Redux/carSlice";
 import { carData } from "../../../utils/carData";
@@ -23,6 +24,7 @@ function isMaterialWithColor(
 }
 
 const CarModel: FC = () => {
+    const a11y = useA11y();
     const dispatch = useStoreDispatch();
     const carConfiguration = useStoreSelector((state) => state.car);
     const possibleColors = carData.find((car) => car.id === carConfiguration.id)?.possibleColors;
@@ -57,12 +59,6 @@ const CarModel: FC = () => {
             if ("isMesh" in object && object.isMesh) {
                 const mesh = object as Mesh;
                 const material = mesh.material as MeshPhysicalMaterial;
-
-                // if (material.name === "light") {
-                //     console.log("gdg");
-                //     material.emissive.set("#ffffff");
-                //     // material.emissiveIntensity = 500;
-                // }
 
                 if (isMaterialWithColor(material)) {
                     if (material.name === "carpaint") {
@@ -126,9 +122,10 @@ const CarModel: FC = () => {
 
     return (
         <>
-            <mesh>
+            <mesh position={a11y.focus ? [0, 2, 0] : [0, 0, 0]}>
                 <primitive object={configuredCar} />
             </mesh>
+
             <mesh>
                 <primitive object={platform} />
             </mesh>

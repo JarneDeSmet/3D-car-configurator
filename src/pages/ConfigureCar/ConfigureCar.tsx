@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { Link } from "react-router-dom";
+import { A11yUserPreferences } from "@react-three/a11y";
 import AppHeader from "../../components/organisms/AppHeader/AppHeader";
 import SelectionMenu from "../../components/organisms/SelectionMenu/SelectionMenu";
 import CarScene from "../../components/organisms/CarScene/CarScene";
@@ -21,16 +22,18 @@ const ConfigureCar: FC = () => {
                     <SideButton text="Select car" icon="select-car" />
                 </Link>
 
-                <div onClick={() => dispatch(setSavePopup(true))}>
+                <button type="button" className={styles.button} onClick={() => dispatch(setSavePopup(true))}>
                     <SideButton text="Save & share" icon="save-share" />
-                </div>
+                </button>
             </div>
             <div className={styles.namePrice}>
                 <h1>Toyota Supra</h1>
                 <h2>€ 53.215</h2>
             </div>
 
-            <CarScene />
+            <A11yUserPreferences>
+                <CarScene />
+            </A11yUserPreferences>
             <SaveAndShare />
             <SelectionMenu />
         </main>

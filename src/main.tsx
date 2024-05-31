@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./global.css";
 import { Provider } from "react-redux";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { A11yUserPreferences } from "@react-three/a11y";
 import { store } from "./Redux/store";
 import Loading from "./components/organisms/Loading/Loading";
 import AccountPage from "./pages/AccountPage/AccountPage";
@@ -73,7 +74,9 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
     <React.StrictMode>
         <Provider store={store}>
-            <RouterProvider router={router} />
+            <A11yUserPreferences>
+                <RouterProvider router={router} />
+            </A11yUserPreferences>
         </Provider>
     </React.StrictMode>,
 );

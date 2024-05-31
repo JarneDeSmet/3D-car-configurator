@@ -35,17 +35,15 @@ const AppHeader: FC<props> = ({ configurator }) => {
 
     return (
         <header className={`${styles.header} ${configurator ? styles.configurator : ""}`}>
-            <Link className={styles.link} to="/">
-                <button type="button" aria-label="Navigate to home" className={styles.logo}>
-                    <img src="/toyotaLogo.png" alt="Toyota Logo" />
-                    <h1>Configurator</h1>
-                </button>
+            <Link aria-label="Navigate to home" className={`${styles.link} ${styles.logo}`} to="/">
+                <img src="/toyotaLogo.png" alt="Toyota Logo" />
+                <h1>Configurator</h1>
             </Link>
 
             <button
                 onClick={() => toggleMenu()}
                 className={styles.menu}
-                aria-label="navigation"
+                aria-label="menu"
                 type="button"
                 aria-expanded={isMenuOpen}
             >
@@ -58,8 +56,10 @@ const AppHeader: FC<props> = ({ configurator }) => {
             <nav className={`${isMenuOpen ? styles.navOpen : styles.navClosed} ${styles.nav}`}>
                 <ul className={styles.navList}>
                     <li className={styles.listItem}>
-                        <p>Settings</p>
-                        <RiSettings4Fill className={styles.listIcon} />
+                        <button type="button" className={styles.listBtn} aria-label="Settings">
+                            <p>Settings</p>
+                            <RiSettings4Fill className={styles.listIcon} />
+                        </button>
                     </li>
 
                     {user !== null ? (

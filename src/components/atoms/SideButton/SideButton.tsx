@@ -8,10 +8,10 @@ type props = {
 
 const SideButton: FC<props> = ({ text, icon }) => {
     return (
-        <button type="button" className={styles.button}>
+        <div className={styles.button}>
             <p>{text}</p>
             <img src={`/assets/${icon}.svg`} alt={icon} />
-        </button>
+        </div>
     );
 };
 
