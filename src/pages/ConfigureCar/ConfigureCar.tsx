@@ -6,19 +6,22 @@ import SelectionMenu from "../../components/organisms/SelectionMenu/SelectionMen
 import CarScene from "../../components/organisms/CarScene/CarScene";
 import SideButton from "../../components/atoms/SideButton/SideButton";
 import SaveAndShare from "../../components/organisms/SaveAndShare/SaveAndShare";
-import { useStoreDispatch } from "../../Redux/store";
+import { useStoreDispatch, useStoreSelector } from "../../Redux/store";
 import { setSavePopup } from "../../Redux/settingsSlice";
+import { carData } from "../../utils/carData";
 import styles from "./ConfigureCar.module.css";
 
 const ConfigureCar: FC = () => {
     const dispatch = useStoreDispatch();
+    const car = useStoreSelector((state) => state.car);
+    const data = carData.find((dataCar) => dataCar.id === car.id);
 
     return (
         <main className={styles.main}>
             <AppHeader configurator />
 
-            <div className={styles.section}>
-                <Link className={styles.link} to="/select-car">
+            <div id="test" className={styles.section}>
+                <Link role="button" className={styles.link} to="/select-car">
                     <SideButton text="Select car" icon="select-car" />
                 </Link>
 
@@ -27,8 +30,8 @@ const ConfigureCar: FC = () => {
                 </button>
             </div>
             <div className={styles.namePrice}>
-                <h1>Toyota Supra</h1>
-                <h2>€ 53.215</h2>
+                <h1>{data?.displayTitle}</h1>
+                <h2>€ {data?.basePrice}</h2>
             </div>
 
             <A11yUserPreferences>

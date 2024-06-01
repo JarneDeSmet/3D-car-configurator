@@ -24,16 +24,6 @@ const SelectCar: FC = () => {
                         />
                     </li>
                 ))}
-
-                {/*<li>*/}
-                {/*    <CarCard*/}
-                {/*        id="1"*/}
-                {/*        title="New Toyota C-HR"*/}
-                {/*        engine="hybride"*/}
-                {/*        carImage="/yaris-mxjl.png"*/}
-                {/*        price="32.830"*/}
-                {/*    />*/}
-                {/*</li>*/}
             </ul>
             {/*<ul className={styles.carList}>*/}
             {/*    <li>*/}

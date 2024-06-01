@@ -7,7 +7,7 @@ import { A11yUserPreferences } from "@react-three/a11y";
 import { store } from "./Redux/store";
 import Loading from "./components/organisms/Loading/Loading";
 import AccountPage from "./pages/AccountPage/AccountPage";
-
+import PageTitle from "./pages/PageTitle";
 const HomePage = lazy(() => import("./pages/HomePage/HomePage"));
 const ErrorPage = lazy(() => import("./pages/ErrorPage/ErrorPage"));
 const SelectCar = lazy(() => import("./pages/SelectCar/SelectCar"));
@@ -20,6 +20,7 @@ const router = createBrowserRouter([
         path: "/",
         element: (
             <Suspense fallback={<Loading />}>
+                <PageTitle title="Home" />
                 <HomePage />
             </Suspense>
         ),
@@ -29,6 +30,7 @@ const router = createBrowserRouter([
         path: "/select-car",
         element: (
             <Suspense fallback={<Loading />}>
+                <PageTitle title="Select" />
                 <SelectCar />
             </Suspense>
         ),
@@ -38,6 +40,7 @@ const router = createBrowserRouter([
         path: "/configure-car/:carId",
         element: (
             <Suspense fallback={<Loading />}>
+                <PageTitle title="Configure" />
                 <ConfigureCar />
             </Suspense>
         ),
@@ -47,6 +50,7 @@ const router = createBrowserRouter([
         path: "/login",
         element: (
             <Suspense fallback={<Loading />}>
+                <PageTitle title="Login" />
                 <Login />
             </Suspense>
         ),
@@ -56,6 +60,7 @@ const router = createBrowserRouter([
         path: "/register",
         element: (
             <Suspense fallback={<Loading />}>
+                <PageTitle title="Register" />
                 <Register />
             </Suspense>
         ),
@@ -65,6 +70,7 @@ const router = createBrowserRouter([
         path: "/account",
         element: (
             <Suspense fallback={<Loading />}>
+                <PageTitle title="Account" />
                 <AccountPage />
             </Suspense>
         ),

@@ -26,6 +26,7 @@ export type CarDataType = {
         engineTitle: string;
         gearbox: gearboxTypes;
         shortDetails: string[];
+        cost: number;
     }[];
     possiblePackages: {
         id: string;
@@ -86,6 +87,7 @@ export const carData: CarDataType[] = [
                 engineTitle: "3.0 Twin-Scroll Turbo",
                 gearbox: gearboxTypes.manualTwoWd,
                 shortDetails: ["Combined cycle consumption: 8.1 l/100km", "CO2 combined cycle: 183 g/km"],
+                cost: 2000,
             },
             {
                 id: "2.0Twin-scrollTurbo",
@@ -93,6 +95,7 @@ export const carData: CarDataType[] = [
                 engineTitle: "2.0 Twin-Scroll Turbo",
                 gearbox: gearboxTypes.automaticTwoWd,
                 shortDetails: ["Combined cycle consumption: 7.1 l/100km", "CO2 combined cycle: 161 g/km"],
+                cost: 0,
             },
         ],
         possiblePackages: [

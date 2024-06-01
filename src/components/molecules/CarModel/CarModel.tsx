@@ -28,7 +28,7 @@ const CarModel: FC = () => {
     const dispatch = useStoreDispatch();
     const carConfiguration = useStoreSelector((state) => state.car);
     const possibleColors = carData.find((car) => car.id === carConfiguration.id)?.possibleColors;
-    const { scene: carScene } = useGLTF("/assets/Toyota-Supra.glb");
+    const { scene: carScene } = useGLTF("/assets/test.glb");
     const { scene: platform } = useGLTF("/assets/platform.glb");
     const { scene: wheelScene } = useGLTF(`/assets/${carConfiguration.rims}.glb`);
 
@@ -43,7 +43,7 @@ const CarModel: FC = () => {
         if (urlColor && carConfiguration.color) dispatch(setColor(urlColor));
         if (urlRim && carConfiguration.rims) dispatch(setRims(urlRim));
         if (urlEngine && carConfiguration.rims) dispatch(setEngine(urlEngine));
-        if (urlSportPack && carConfiguration.sportPackage) dispatch(setSportPackage(Boolean(urlSportPack)));
+        if (urlSportPack) dispatch(setSportPackage(Boolean(urlSportPack)));
     }, [
         carConfiguration.color,
         carConfiguration.rims,

@@ -25,7 +25,10 @@
     max-width: 30rem;
     border: none;
 }
+.card img {
+    width: 10rem;
 
+}
 .cardHead {
     display: flex;
     align-items: start;

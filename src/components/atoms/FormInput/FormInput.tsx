@@ -15,7 +15,7 @@ const FormInput: FC<FormInputProps> = (props) => {
     return (
         <div className={styles.input}>
             <label htmlFor={id}>{label}</label>
-            <input type={type} name={name} id={id} value={value} onChange={onChange} />
+            <input autoComplete={type} type={type} name={name} id={id} value={value} onChange={onChange} />
         </div>
     );
 };

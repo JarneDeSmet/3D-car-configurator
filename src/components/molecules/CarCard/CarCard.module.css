@@ -5,11 +5,16 @@
     padding: 0.5rem;
     position: relative;
     cursor: pointer;
-
+    background: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
 }
+
 .card:hover {
     transform: translateY(-0.2rem);
 }
+
 .card::after {
     content: '';
     position: absolute;
@@ -70,7 +75,7 @@
     color: var(--light-grey);
 }
 
-.link{
+.link {
     text-decoration: none;
     color: inherit;
 }

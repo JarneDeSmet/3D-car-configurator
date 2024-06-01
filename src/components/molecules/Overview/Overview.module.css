@@ -1,0 +1,179 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 1.5rem;
+    height: 98%;
+}
+
+.overviewList {
+    display: flex;
+    margin-left: 1rem;
+    padding-left: 1rem;
+    margin-top: 2rem;
+    list-style: none;
+    margin-bottom: 0;
+    width: 80%;
+    overflow-x: auto;
+}
+
+.overviewList li {
+    width: 20rem;
+    min-width: 20rem;
+    padding-right: 3rem;
+    padding-left: 3rem;
+    border-right: solid 1px var(--foreground);
+    height: 10rem;
+}
+
+.overviewList li:first-child {
+    padding-left: 0;
+}
+
+.overviewList li:last-child {
+    border-right: none;
+}
+
+.color {
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    width: 3rem;
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+}
+
+.color::before {
+    content: "";
+    position: absolute;
+    width: 3rem;
+    height: 1rem;
+    background: var(--dark-color-accent);
+    top: 0;
+    left: 0;
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+}
+
+.heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.heading {
+    border-bottom: solid 1px var(--foreground);
+    padding-bottom: 0.2rem;
+    margin-bottom: 2rem;
+}
+
+.heading h3 {
+    margin: 0;
+    font-weight: 500;
+}
+
+.heading p {
+    margin: 0;
+}
+
+.details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.details p {
+    margin: 0;
+}
+
+.details img:not(.img) {
+    width: 5rem;
+    background: var(--foreground);
+    padding: 0.2rem;
+}
+
+
+.engineDetails div p {
+    margin: 0;
+}
+
+.title {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.title div {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.title div p {
+    margin: 0;
+}
+
+.fuel {
+    text-transform: uppercase;
+    color: var(--light-blue);
+}
+
+.shortDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding-left: 1rem;
+    margin-top: 1rem;
+}
+
+.shortDetails li {
+    height: fit-content;
+    border: none;
+    padding: 0;
+}
+
+.complete {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-grow: 1;
+    margin-left: 1rem;
+}
+
+.complete div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+    text-align: end;
+}
+
+.complete div h2 {
+    margin: 0;
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+
+.complete div p {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.quote {
+    background: none;
+    border: solid 1px var(--foreground);
+    padding: 0.7rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+    width: 13rem;
+}
+
+.quote:hover {
+    background: var(--static-background);
+
+}
+
+.img {
+    width: 10rem;
+}
