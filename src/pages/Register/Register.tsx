@@ -1,6 +1,6 @@
 import { ChangeEvent, FC, FormEvent, useState } from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { doc, setDoc } from "@firebase/firestore";
 import AppHeader from "../../components/organisms/AppHeader/AppHeader";
 import styles from "../Login/Login.module.css";
@@ -12,7 +12,7 @@ const Register: FC = () => {
     const [password, setPassword] = useState("");
     const [repeatPassword, setRepeat] = useState("");
     const [error, setError] = useState("");
-
+    const navigator = useNavigate();
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
         const { name, value } = event.target;
         if (name === "email") {
@@ -48,6 +48,8 @@ const Register: FC = () => {
             setEmail("");
             setError("");
             setPassword("");
+            setRepeat("");
+            navigator("/login");
         } catch (error) {
             if (error instanceof Error) setError(error.message);
         }

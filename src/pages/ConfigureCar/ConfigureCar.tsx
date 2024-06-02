@@ -7,8 +7,9 @@ import CarScene from "../../components/organisms/CarScene/CarScene";
 import SideButton from "../../components/atoms/SideButton/SideButton";
 import SaveAndShare from "../../components/organisms/SaveAndShare/SaveAndShare";
 import { useStoreDispatch, useStoreSelector } from "../../Redux/store";
-import { setSavePopup } from "../../Redux/settingsSlice";
+import { setInfoPopUp, setSavePopup } from "../../Redux/settingsSlice";
 import { carData } from "../../utils/carData";
+import InfoPopUp from "../../components/organisms/InfoPopUp/InfoPopUp";
 import styles from "./ConfigureCar.module.css";
 
 const ConfigureCar: FC = () => {
@@ -20,13 +21,16 @@ const ConfigureCar: FC = () => {
         <main className={styles.main}>
             <AppHeader configurator />
 
-            <div id="test" className={styles.section}>
+            <div className={styles.section}>
                 <Link role="button" className={styles.link} to="/select-car">
                     <SideButton text="Select car" icon="select-car" />
                 </Link>
 
                 <button type="button" className={styles.button} onClick={() => dispatch(setSavePopup(true))}>
                     <SideButton text="Save & share" icon="save-share" />
+                </button>
+                <button type="button" className={styles.button} onClick={() => dispatch(setInfoPopUp(true))}>
+                    <SideButton text="Info" icon="info" />
                 </button>
             </div>
             <div className={styles.namePrice}>
@@ -38,6 +42,7 @@ const ConfigureCar: FC = () => {
                 <CarScene />
             </A11yUserPreferences>
             <SaveAndShare />
+            <InfoPopUp />
             <SelectionMenu />
         </main>
     );

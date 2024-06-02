@@ -1,0 +1,166 @@
+.container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: var(--popUpBackground);
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.closed {
+    display: none;
+}
+
+.closeButton {
+    position: absolute;
+    right: 0.5rem;
+    top: .5rem;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.closeIcon {
+    width: 2rem;
+    height: 2rem;
+    color: var(--foreground);
+    transition-duration: 0.5s;
+}
+
+.closeIcon:hover {
+    cursor: pointer;
+    transform: scale(1.05) translateY(-0.1rem);
+    transition-duration: 0.5s;
+}
+
+.card {
+    position: relative;
+    background: var(--radial-background);
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 4rem 4rem;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 4rem;
+}
+
+.card h2 {
+    text-align: center;
+    font-size: 1.3rem;
+    margin: 0;
+    font-weight: 400;
+}
+
+.button {
+    background: none;
+    border: solid 1px var(--foreground);
+    font-size: 1rem;
+    padding: 0.5rem 3rem;
+    transition-duration: 0.3s;
+}
+
+.button:hover {
+    cursor: pointer;
+    background: #282830;
+    transition-duration: 0.3s;
+    transform: translateY(-0.2rem);
+}
+
+.button p {
+    margin: 0;
+    font-weight: 300;
+}
+
+.other {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.otherText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.otherText p {
+    margin: 0;
+}
+
+.qrCode {
+    padding: 0.1rem;
+    background: #FEFEFE;
+}
+
+
+.shareTest {
+    width: 2rem;
+    height: 2rem;
+    border: solid 1px var(--foreground);
+}
+
+.showMessage {
+    margin: 0;
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--light-blue);
+}
+
+.hidemessage {
+    display: none;
+}
+
+.keysList{
+    padding: 0;
+}
+
+.keysList li {
+    display: flex;
+    gap: 2rem;
+    justify-content: space-between;
+
+}
+.optionList{
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 0;
+}
+.h3{
+    margin-top: 0;
+    font-size: 1rem;
+    text-align: center;
+    font-weight: 300;
+}
+.options {
+    display: flex;
+    gap: 1rem;
+}
+
+.key {
+    margin: 0;
+    padding: 0.25rem;
+    font-size: 1.5rem;
+    background: var(--foreground);
+    color: var(--foreground-black);
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

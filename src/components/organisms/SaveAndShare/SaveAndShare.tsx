@@ -29,6 +29,7 @@ const SaveAndShare: FC = () => {
             await saveToAccount(user, { url: window.location.href, car });
         } else {
             dispatch(setPendingSave({ url: window.location.href, car }));
+            dispatch(setSavePopup(false));
             navigate("/login");
         }
     };

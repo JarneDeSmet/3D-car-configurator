@@ -39,11 +39,12 @@ const CarModel: FC = () => {
         const urlRim = hashValue.includes("rims") ? hashValueGroups[1].split("=")[1] : undefined;
         const urlEngine = hashValue.includes("engine") ? hashValueGroups[2].split("=")[1] : undefined;
         const urlSportPack = hashValue.includes("sportPackage") ? hashValueGroups[3].split("=")[1] : undefined;
+        const urlSportPackBool = urlSportPack === "true";
 
         if (urlColor && carConfiguration.color) dispatch(setColor(urlColor));
         if (urlRim && carConfiguration.rims) dispatch(setRims(urlRim));
         if (urlEngine && carConfiguration.rims) dispatch(setEngine(urlEngine));
-        if (urlSportPack) dispatch(setSportPackage(Boolean(urlSportPack)));
+        dispatch(setSportPackage(urlSportPackBool));
     }, [
         carConfiguration.color,
         carConfiguration.rims,

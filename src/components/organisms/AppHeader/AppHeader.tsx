@@ -66,8 +66,8 @@ const AppHeader: FC<props> = ({ configurator }) => {
                         <li className={styles.listItem}>
                             <Link role="button" to="/account" className={styles.link}>
                                 <p>Account</p>
-                            </Link>{" "}
-                            <RiAccountCircleLine className={styles.listIcon} />
+                                <RiAccountCircleLine className={styles.listIcon} />
+                            </Link>
                         </li>
                     ) : (
                         <li className={styles.listItem}>

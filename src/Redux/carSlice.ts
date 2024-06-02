@@ -43,8 +43,14 @@ const carSlice = createSlice({
         setSportPackage: (state, action: PayloadAction<boolean>) => {
             state.sportPackage = action.payload;
         },
+        setCar: (state, action: PayloadAction<CarState>) => {
+            state.rims = action.payload.rims;
+            state.color = action.payload.color;
+            state.engine = action.payload.engine;
+            state.sportPackage = action.payload.sportPackage;
+        },
     },
 });
-export const { setSportPackage, setColor, setCarId, setRims, setEngine } = carSlice.actions;
+export const { setCar, setSportPackage, setColor, setCarId, setRims, setEngine } = carSlice.actions;
 
 export default carSlice.reducer;
