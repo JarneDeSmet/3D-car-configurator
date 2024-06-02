@@ -1,5 +1,5 @@
 import { FC, useEffect, useState } from "react";
-import { RiAccountCircleLine, RiSettings4Fill } from "@remixicon/react";
+import { RiAccountCircleLine } from "@remixicon/react";
 import { Link } from "react-router-dom";
 import { useStoreSelector } from "../../../Redux/store";
 import styles from "./AppHeader.module.css";
@@ -55,12 +55,12 @@ const AppHeader: FC<props> = ({ configurator }) => {
             </button>
             <nav className={`${isMenuOpen ? styles.navOpen : styles.navClosed} ${styles.nav}`}>
                 <ul className={styles.navList}>
-                    <li className={styles.listItem}>
-                        <button type="button" className={styles.listBtn} aria-label="Settings">
-                            <p>Settings</p>
-                            <RiSettings4Fill className={styles.listIcon} />
-                        </button>
-                    </li>
+                    {/*<li className={styles.listItem}>*/}
+                    {/*    <button type="button" className={styles.listBtn} aria-label="Settings">*/}
+                    {/*        <p>Settings</p>*/}
+                    {/*        <RiSettings4Fill className={styles.listIcon} />*/}
+                    {/*    </button>*/}
+                    {/*</li>*/}
 
                     {user !== null ? (
                         <li className={styles.listItem}>
@@ -76,11 +76,6 @@ const AppHeader: FC<props> = ({ configurator }) => {
                             </Link>
                         </li>
                     )}
-
-                    {/*<li className={styles.listItem}>*/}
-                    {/*    <p>Account</p>*/}
-                    {/*    <RiAccountCircleLine className={styles.listIcon} />*/}
-                    {/*</li>*/}
                 </ul>
             </nav>
         </header>
