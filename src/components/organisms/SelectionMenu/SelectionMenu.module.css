@@ -35,10 +35,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-}
-.iconArrow{
     color: var(--foreground);
+
 }
+
+.nextPrevious:disabled{
+    color: var(--light-grey);
+}
+
 .buttonWrapper button {
     display: none;
     max-width: 10rem;
