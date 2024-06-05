@@ -36,13 +36,17 @@
     justify-content: center;
     align-items: center;
 }
-
+.iconArrow{
+    color: var(--foreground);
+}
 .buttonWrapper button {
     display: none;
     max-width: 10rem;
     width: 100%;
     font-size: 1.1rem;
     cursor: pointer;
+    color: var(--foreground);
+    font-weight: 500;
 }
 
 .buttonWrapper button.active {
@@ -55,6 +59,7 @@
     height: 9.313rem;
     overflow-y: hidden;
 }
+
 .details {
     height: 17rem;
 }

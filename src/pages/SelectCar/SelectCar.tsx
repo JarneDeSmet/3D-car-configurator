@@ -3,7 +3,6 @@ import AppHeader from "../../components/organisms/AppHeader/AppHeader";
 import CarCard from "../../components/molecules/CarCard/CarCard";
 import { carData } from "../../utils/carData";
 import styles from "./SelectCar.module.css";
-import "../../global.css";
 
 const SelectCar: FC = () => {
     return (

@@ -22,7 +22,7 @@ const SelectionMenu: FC = () => {
                     onClick={() => setActiveIndex(activeIndex - 1)}
                     disabled={activeIndex === 0}
                 >
-                    <RiArrowLeftSLine size="2rem" />
+                    <RiArrowLeftSLine className={styles.iconArrow} size="2rem" />
                 </button>
                 <div className={styles.buttonWrapper}>
                     {buttons.map((button, index) => (
