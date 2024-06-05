@@ -22,8 +22,6 @@
     --popUpBackground: rgba(0, 0, 0, 0.4);
     --forminput-background: #30303A;
 
-    color: var(--foreground);
-    background: var(--radial-background);
 }
 
 
@@ -33,6 +31,8 @@ body {
     flex-direction: column;
     min-width: 320px;
     min-height: 100vh;
+    color: var(--foreground);
+    background: var(--radial-background);
 }
 
 *:focus-visible, *:focus {
