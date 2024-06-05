@@ -24,11 +24,19 @@
     border-radius: 2px;
     max-width: 30rem;
     border: none;
+    cursor: pointer;
 }
+
+.card:hover {
+    cursor: pointer;
+    background: #ffffff;
+}
+
 .card img {
     width: 10rem;
 
 }
+
 .cardHead {
     display: flex;
     align-items: start;
